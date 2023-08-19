@@ -4,46 +4,62 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Welcome to my game! Let's do some math!");
 
-        //try
-        //{
-        //Console.WriteLine("please enter your name");
-        //string userName = Console.ReadLine();
-        //Console.WriteLine("please enter your birthday");
-        //int userAge = Convert.ToInt32(Console.ReadLine());
-        //Console.WriteLine($"can we call you {userName} and your age is {2023 - userAge }");
-        //Console.ReadLine();
+        StartSequence();
 
-        //} catch(OverflowException error)
-
-        //{
-        //    Console.WriteLine($"there is an error happend in taking the values in {error.Message}");
-        //}
-        //catch (FormatException error)
-
-        //{
-        //    Console.WriteLine($"there is an error happend in taking the values in {error.Message}");
-        //}
-        //finally
-        //{
-        //    Console.WriteLine("final method");
-        //    Console.Clear();
-        //}
-        square();
-
-        _ = Console.ReadKey();
+        Console.ReadKey();
     }
-    private static void square()
+
+    static void StartSequence()
     {
-        int[] arr = new int[3] { 2, 4, 8 };
-        foreach (int num in arr)
-        {
-            Console.WriteLine("the element :" + num);
-        };
-        for (int i = 0; i < arr.Length; i++)
-        {
-            Console.WriteLine("the element is: " + arr[i]);
-        }
+        Console.WriteLine("please enter a number greater then zero ?");
+        int number = Convert.ToInt32(Console.ReadLine());
+        int [] arr = new int[number];
+        Console.WriteLine(arr);
+        int[] first = populate(arr);
+        int sum = GetSum(first);
+        GetProduct(arr,sum);
+        
     }
+
+    static int[] populate(int[] slam1)
+    {
+        int arrayLength = slam1.Length;
+        for (int i = 0; i < arrayLength; i++)
+        {
+            Console.WriteLine($"please enter a number between {i + 1} and {arrayLength}");
+            int num = Convert.ToInt32(Console.ReadLine());
+            slam1[i] = num;
+        }
+
+        return slam1;
+    }
+
+    static int GetSum(int[] slam2)
+    {
+        int sum = 0;
+        foreach (int i in slam2)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+
+    static int GetProduct(int[] slam3, int slam4)
+    {
+        Console.WriteLine($"please enter a value between 1 and {slam3.Length}");
+        int lemonada = Convert.ToInt32(Console.ReadLine());
+        if (lemonada > slam3.Length && lemonada < 0)
+        {
+            throw new Exception("please enter again ");
+        }
+        int product = lemonada * slam4;
+        Console.WriteLine(product);
+
+        return product;
+    }
+
+    //static int GetQutati
 
 }
