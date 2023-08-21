@@ -1,13 +1,15 @@
 ﻿namespace bug_fixing;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to my game! Let's do some math!");
-
+        //int i
+        Console.WriteLine("🤣");
         StartSequence();
 
+        //Converts(1);
         Console.ReadKey();
     }
 
@@ -15,12 +17,12 @@ class Program
     {
         Console.WriteLine("please enter a number greater then zero ?");
         int number = Convert.ToInt32(Console.ReadLine());
-        int [] arr = new int[number];
+        int[] arr = new int[number];
         Console.WriteLine(arr);
         int[] first = populate(arr);
         int sum = GetSum(first);
-        GetProduct(arr,sum);
-        
+        GetProduct(arr, sum);
+
     }
 
     static int[] populate(int[] slam1)
@@ -58,6 +60,27 @@ class Program
         Console.WriteLine(product);
 
         return product;
+    }
+
+    public static string Converts(int number)
+    {
+         if (number % 15 == 0)
+              {
+                return "FizzBuzz";
+              }
+
+        else if (number % 5 == 0)
+             {
+                    return "buzz";
+             }
+        else if (number % 3 == 0)
+             {
+                return "fizz";
+             }
+        else
+            {
+                return number.ToString();
+            }
     }
 
     //static int GetQutati
