@@ -6,7 +6,6 @@ public class Program
     {
         Console.WriteLine("Welcome to my game! Let's do some math!");
         //int i
-        Console.WriteLine("🤣");
         StartSequence();
 
         //Converts(1);
